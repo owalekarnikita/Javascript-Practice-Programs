@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <pre id="rabbit">
+        |\   /|
+         \|_|/
+         /. .\
+        =\_Y_/=
+         {>o<}
+         {>o<}
+      </pre>
+    <button onclick="hide()">Hide()</button>
+    <script>
+        let event = new MouseEvent("Hi", {
+            bubbles: true,
+            clientX: 200,
+            clientY: 100,
+            cancelable: true
+        });
+
+        alert(event.bubbles);
+        alert(event.clientX);
+
+        function hide() {
+            let event = new CustomEvent("hide", {
+                cancelable: true // without that flag preventDefault doesn't work
+            });
+            if (!rabbit.dispatchEvent(event)) {
+                alert('The action was prevented by a handler');
+            } else {
+                rabbit.hidden = true;
+            }
+        }
+
+        rabbit.addEventListener('hide', function(event) {
+            if (confirm("Call preventDefault?")) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+
+</html>

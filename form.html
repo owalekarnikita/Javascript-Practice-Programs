@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Events </title>
+</head>
+
+<body>
+    <form name="my">
+        <input name="one" value="1">
+        <input name="two" value="5">
+    </form>
+
+    <script>
+        // get the form
+        let form = document.forms.my; // <form name="my"> element
+
+        // get the element
+        let elem = form.elements.two; // <input name="one"> element
+
+        alert(elem.value); // 1
+        // alert(form.value);
+    </script>
+
+    <script>
+        function ready() {
+            alert('DOM is ready');
+
+            // image is not yet loaded (unless it was cached), so the size is 0x0
+            alert(`Image size: ${img.offsetWidth}x${img.offsetHeight}`);
+        }
+
+        document.addEventListener("DOMContentLoaded", ready);
+        window.open("https://www.google.com/");
+    </script>
+
+    <img id="img" src="https://en.js.cx/clipart/train.gif?speed=1&cache=0">
+</body>
+
+</html>

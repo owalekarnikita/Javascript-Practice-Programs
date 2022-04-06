@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .alert {
+            padding: 15px;
+            border: 1px solid #d6e9c6;
+            border-radius: 4px;
+            color: #3c763d;
+            background-color: #dff0d8;
+        }
+    </style>
+
+</head>
+
+<body id="main">
+
+    <div id="div">
+        <div> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, quae.</div>
+        <ul id="ullist">
+            <li class="first"> Hi </li>
+            <li class="alert"> bye </li>
+        </ul>
+    </div>
+    <script>
+        div.before('<p>Hello</p>', document.createElement('hr'));
+        let a = document.getElementById('div');
+        a.style.background = "red";
+        // a.innerHTML = "fgfytuuhhgrftfdtfgyhi";
+        alert(document.body.id);
+
+        alert(a.outerHTML); // it will show whole html page with tags and  styles 
+
+
+        let b = document.getElementById('ullist');
+        b.style.background = "blue";
+        b.style.margin = "10px";
+
+        alert(b.data = "b data is changed to hello"); //chnaged the data of b 
+
+        alert(b.textContent); // shows all data contain in ullist id.
+
+        // let c = document.getElementsByClassName('first');
+        // c.style.padding = "5px";
+
+        alert(document.body.tagName);
+        alert(document.head.tagName);
+        alert(document.nodeType);
+
+        function demo() {
+            alert("Hello Everyone");
+        }
+        window.demo(); //root dunction in js dom
+        window.innerHeight; //shows window height
+        window.innerWidth;
+
+        setTimeout(() => document.body.style.background = "Grey", 2000);
+        alert(location.href);
+        if (confirm("Go to google homepage ??")) {
+            location.href = ("https://google.com");
+        }
+
+        document.writeln(document.documentElement.parentNode);
+        document.writeln(document.head.nextSibling);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="class.js"></script> -->
+</head>
+
+<body>
+    <script>
+        class Circle {
+            constructor(rd) {
+                this.rd = rd;
+            }
+            area() {
+                console.log(`Radius of circle is : ${this.rd}`);
+                console.log(`area of circle is : ${this.rd * this.rd}`);
+            }
+        }
+        let circle1 = new Circle(6);
+        let circle2 = new Circle(10);
+        circle1.area();
+        circle2.area();
+
+
+
+        class Article {
+            constructor(title, date) {
+                this.title = title;
+                this.date = date;
+            }
+
+            static createTodays() {
+                // remember, this = Article
+                return new this("Today's digest", new Date());
+            }
+        }
+
+        let article = Article.createTodays();
+
+        console.log(article.title); // Today's digest
+
+        let Hii = {
+            sayHi() {
+                console.log(`Hello ${this.name}`);
+            },
+            sayBye() {
+                console.log(`Bye ${this.name}`);
+            }
+        }
+        class Second {
+            constructor(name) {
+                this.name = name;
+            }
+        }
+
+        Object.assign(Second.prototype, Hii);
+
+        new Second("abc").sayBye();
+        new Second("xyz").sayHi();
+
+        try {
+
+            alert('Start of try runs'); // (1) <--
+
+            lalala; // error, variable is not defined!
+
+            alert('End of try (never reached)'); // (2)
+
+        } catch (err) {
+
+            alert(`Error has occurred!`); // (3) <--
+
+        }
+    </script>
+</body>
+
+</html>
